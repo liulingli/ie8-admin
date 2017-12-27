@@ -1,0 +1,27 @@
+{
+  "name": "ie8-admin",
+  "version": "0.0.1",
+  "description": "兼容ie8的后台管理系统项目构建",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.16.2",
+    "express-http-proxy": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-less": "^3.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-template": "^4.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1",
+    "less": "^2.7.3"
+  }
+}
