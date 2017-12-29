@@ -57,11 +57,12 @@ function fetchAjax(json){
 function showLoading(){
     var loadingHtml = "<div id='loading'>" +
         "<div class='loading-content'>" +
-        "<img src='images/Spinner.gif'/>" +
+        "<img src='images/Ellipsis.svg' />" +
+        "<p>正在加载中...</p>" +
         "</div>" +
         "</div>";
     if($("#loading").length==0){
-        $("body").append(loadingHtml);
+        $("#main-content").append(loadingHtml);
     }else{
         $("#loading").show();
     }

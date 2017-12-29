@@ -15,14 +15,19 @@ $(function(){
             $.ajax({
                 method :"get",
                 url: page,
+                beforeSend:function(){
+                    showLoading()
+                },
                 success : function(response){
                     $("#main-content").html(response);
                     //eval(method+"()");
+                    hideLoading()
                 },
                 error : function(error){
                     if(error.status == 404){
                         $("#main-content").html("<p>正在开发中</p>");
                     }
+                    hideLoading();
                 }
             });
         }

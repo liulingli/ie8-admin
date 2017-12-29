@@ -24,10 +24,10 @@ var config = {
             }
         ]
     },{
-        url:  "componentHtml/userManagement.html",
-        icon: "&#xe618;",
-        text: "用户管理",
-        method:"userManagement"
+        url:  "componentHtml/tableList.html",
+        icon: "&#xe617;",
+        text: "查询表格",
+        method:"tableList"
     }, {
         url: "componentHtml/analysisManage.html",
         icon: "&#xe601;",
