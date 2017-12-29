@@ -18,7 +18,9 @@ const rev = require('gulp-rev'); //文件名加MD5后缀
 const revCollector = require('gulp-rev-collector');  //路径替换
 const spriter = require('gulp-css-spriter'); //雪碧图
 const base64 = require('gulp-css-base64'); //将小图片转成base64
-const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin'); //图片压缩
+const plumber = require('gulp-plumber'); //错误处理
+
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -65,7 +67,8 @@ gulp.task('html',function(){
 
 //合并js文件并压缩并加上md5
 gulp.task('uglifyjs',function(){
-    return gulp.src('src/**/*.js')
+    return gulp.src('src/js/*.js')
+        .pipe(plumber())
         .pipe(concat('build.js')) //合并成一个js
         .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'js')) //输出到js目录
         .pipe(uglify()) //压缩js到一行
@@ -74,12 +77,14 @@ gulp.task('uglifyjs',function(){
         .pipe(rev())//文件名加MD5后缀
         .pipe(gulp.dest((isDev?app.devPath:app.distPath)+"js"))
         .pipe(rev.manifest()) // 生成一个rev-manifest.json
+        .pipe(plumber.stop())
         .pipe(gulp.dest('rev/js'));
 });
 
 //less压缩
 gulp.task('less', function () {
     return gulp.src('src/less/*.less')
+        .pipe(plumber())
         .pipe(gulpLess())
         .pipe(concat('build.css'))
         .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'css')) //输出到css目录
@@ -96,6 +101,7 @@ gulp.task('less', function () {
         .pipe(rev())//文件名加MD5后缀
         .pipe(gulp.dest((isDev?app.devPath:app.distPath)+"css"))
         .pipe(rev.manifest()) // 生成一个rev-manifest.json
+        .pipe(plumber.stop())
         .pipe(gulp.dest('rev/css'));
 
 });
@@ -126,17 +132,41 @@ gulp.task('rev', function() {
         .pipe(gulp.dest(isDev?app.devPath:app.distPath));
 });
 
-//自动监听文件变化
+//开发环境打包js
+gulp.task('uglifyjs-dev',function(){
+    return gulp.src('src/js/*.js')
+        .pipe(plumber())
+        .pipe(concat('build.js')) //合并成一个js
+        .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'js')) //输出到js目录
+        .pipe(plumber.stop())
+});
+
+//开发环境打包less
+gulp.task('less-dev', function () {
+    return gulp.src('src/less/*.less')
+        .pipe(plumber())
+        .pipe(gulpLess())
+        .pipe(concat('build.css'))
+        .pipe(gulp.dest((isDev ? app.devPath : app.distPath) + 'css')) //输出到css目录
+})
+
+//自动监听html文件变化
 gulp.task('watchHtml',function(){
     return gulp.watch(['index.html','login.html','src/!**!/!*.html','dev/!**!/!*.html'],['html']) // 监听根目录下所有.html文件
 });
 
+//自动监听less文件的变化
 gulp.task('watchLess',function(){
-    return gulp.watch(['src/less/**/*.less'],['less']);
+    return gulp.watch(['src/less/**/*.less'],['less-dev']);
+})
+
+//自动监听js文件的变化
+gulp.task('watchJs',function(){
+    return gulp.watch(['config.js','src/js/**/*.js'],['uglifyjs-dev']);
 })
 
 //开发环境启动
-gulp.task('development',sequence('clean:dev','uglifyjs','less','compress-img','copy-third-party','html','copy-html','config','watchHtml','watchLess','webserver'));
+gulp.task('development',sequence('clean:dev','uglifyjs-dev','less-dev','compress-img','copy-third-party','html','copy-html','config','watchHtml','watchLess','watchJs','webserver'));
 
 //生产环境打包
 gulp.task('dist',sequence('clean:dist','uglifyjs','less','rev','compress-img','copy-third-party','html','copy-html','config'))

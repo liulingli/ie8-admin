@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>兼容ie8的后台管理系统项目构建</title>
-    <link rel="stylesheet" href="css/build.min.css">
+    <link rel="stylesheet" href="css/build.css">
 </head>
 <body>
-     <div class="app">
+     <div id="app" class="app">
          <div class="admin-layout ">
              <div class="layout-slider">
                   <div class="layout-slider-children">
@@ -14,22 +14,22 @@
                           <img src="images/logo.svg"/>
                           <h1>管理后台</h1>
                       </div>
-                      <div class="menu-slider" id="menu">
-
+                      <div class="menu-slider">
+                         <ul id="menu"></ul>
                       </div>
                   </div>
              </div>
              <div class="main-layout">
                  <div class="main-layout-header">
-                     <i class="anticon anticon-menu-unfold">&#xe65b;</i>
+                     <i class="anticon anticon-menu-unfold" id="unfoldControl"></i>
                      <div class="main-layout-header-right">
                          <span class="ant-badge">
-                             <i class="anticon">&#xe71f;</i>
+                             <i class="anticon anticon-notice">&#xe71f;</i>
                              <label class="sub ant-badge-number">21</label>
                          </span>
                          <span class="ant-acount ant-dropdown-trigger">
                              <span class="avatar avatar-circle">
-                                 <img src=""/>
+                                 <img src="images/user.png"/>
                              </span>
                               小六子不伶俐
                              <ul class="sub-dropdowm-menu">
@@ -56,6 +56,6 @@
      <script type="text/javascript" src="lib/json_parse.js"></script>
      <script type="text/javascript" src="lib/jquery.hashchange.min.js"></script>
      <script type="text/javascript" src="js/config.js"></script>
-     <script type="text/javascript" src="js/build.min.js"></script>
+     <script type="text/javascript" src="js/build.js"></script>
 </body>
 </html>

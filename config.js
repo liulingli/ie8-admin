@@ -4,12 +4,26 @@
  */
 var config = {
     baseUrl : "<%=baseUrl%>",
-    ADMIN_MENU_ARRAY : [{ //管理员菜单
+    ADMIN_MENU_ARRAY : [{
         url:  "componentHtml/dashboard.html",
         icon: "&#xe60c;",
         text: "主页",
-        method:"userManagement"
-    },{ //管理员菜单
+        method:"dashboard"
+    },{
+        text:'详情页',
+        icon: "&#xe606;",
+        children: [
+            {
+                url:  "componentHtml/baseDetail.html",
+                text: "基础详情页",
+                method:"baseDetail"
+            }, {
+                url:  "componentHtml/advancedDetail.html",
+                text: "高级详情页",
+                method:"advancedDetail"
+            }
+        ]
+    },{
         url:  "componentHtml/userManagement.html",
         icon: "&#xe618;",
         text: "用户管理",
