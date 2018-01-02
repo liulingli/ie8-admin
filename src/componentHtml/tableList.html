@@ -1,3 +1,94 @@
 <div class="table-list">
-    查询表格
+    <div class="table-list-form">
+        <div class="form-item">
+            <label class="for-label">输入框一：</label>
+            <input type="text" name="query1" class="form-control" placeholder="条件">
+        </div>
+        <div class="form-item">
+            <label class="for-label">下拉框：</label>
+            <select placeholder="请选择">
+                <option value="">请选择</option>
+                <option value="1">吃饭</option>
+                <option value="2">睡觉</option>
+                <option value="3">打豆豆</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <label class="for-label">多选查询一：</label>
+            <input type="checkbox" name="check" class="chkbox2" id="checkbox21"><label for="checkbox21">音乐音乐音乐音乐</label>
+            <input type="checkbox" name="check" class="chkbox2" id="checkbox22"><label for="checkbox22">体育</label>
+            <input type="checkbox" name="check" class="chkbox2" id="checkbox23"><label for="checkbox23">美术</label>
+            <input type="checkbox" name="check" class="chkbox2" id="checkbox24"><label for="checkbox24">英语</label>
+        </div>
+        <div class="form-item">
+            <label class="for-label">多选查询二：</label>
+            <input type="checkbox" name="checkbox2" id="checkbox31"><label for="checkbox31">音乐</label>
+            <input type="checkbox" name="checkbox2" id="checkbox32"><label for="checkbox32">体育体育体育</label>
+            <input type="checkbox" name="checkbox2" id="checkbox33"><label for="checkbox33">美术</label>
+            <input type="checkbox" name="checkbox2" id="checkbox34"><label for="checkbox34">英语</label>
+        </div>
+        <div class="form-item">
+            <label class="for-label">多选查询二：</label>
+            <input type="checkbox" name="checkbox" class="chkbox1" id="checkbox1"><label for="checkbox1">音乐1</label>
+            <input type="checkbox" name="checkbox" class="chkbox1" id="checkbox2"><label for="checkbox2">体育体育体育1</label>
+            <input type="checkbox" name="checkbox" class="chkbox1" id="checkbox3"><label for="checkbox3">美术1</label>
+            <input type="checkbox" name="checkbox" class="chkbox1" id="checkbox4"><label for="checkbox4">英语1</label>
+        </div>
+        <div class="form-item">
+            <label class="for-label">单选查询一：</label>
+            <input type="radio" name="radio" id="radio1"><label for="radio1">音乐</label>
+            <input type="radio" name="radio" id="radio2"><label for="radio2">体育</label>
+            <input type="radio" name="radio" id="radio3"><label for="radio3">美术</label>
+            <input type="radio" name="radio" id="radio4"><label for="radio4">英语</label>
+        </div>
+        <div class="form-item">
+            <label class="for-label">单选查询二：</label>
+            <input type="radio" name="radio1" class="radio2" id="radio11"><label for="radio11">音乐</label>
+            <input type="radio" name="radio1" class="radio2" id="radio12"><label for="radio12">体育</label>
+            <input type="radio" name="radio1" class="radio2" id="radio13"><label for="radio13">美术美术美术</label>
+            <input type="radio" name="radio1" class="radio2" id="radio14"><label for="radio14">英语</label>
+        </div>
+        <div class="form-item">
+            <input type="radio" class="radioxx" />
+            <span></span>
+        </div>
+        <div class="query-btn">
+            <button class="btn btn-primary">查询</button>
+        </div>
+    </div>
+    <div class="table-list-operate">
+        <button class="btn btn-primary"><i class="anticon anticon-add">&#xe629;</i>新增</button>
+    </div>
+    <div class="table-list-content">
+        <table class="antd-table">
+            <colgroup>
+                <col width="100px"/>
+                <col width="200px"/>
+                <col width="200px"/>
+                <col width="200px"/>
+                <col width="200px"/>
+                <col width="300px"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" class="checkbox" name="checkAll"></th>
+                    <th>规则编号</th>
+                    <th>描述</th>
+                    <th>服务调用次数</th>
+                    <th>状态</th>
+                    <th>更新时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="checkbox" name="checkAll"></td>
+                    <td>TradCode100</td>
+                    <td>这是一段描述描述</td>
+                    <td>542万</td>
+                    <td>运行中</td>
+                    <td>2018-01-01 17:00:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

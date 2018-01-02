@@ -1,0 +1,349 @@
+@boxShadawFocusColor: rgba(24, 144, 255, 0.2);
+@borderFocusColor: #40a9ff;
+@primaryColor: #1890ff;
+@primaryColorHover:#40a9ff;
+.border-radius {
+  border-radius: 4px;
+}
+.form-item[type='text']:empty:before,
+.form-item[type='password']:empty:before,
+[contenteditable]:empty:before,
+select:empty:before,
+textarea:empty:before{
+  content: attr(placeholder);
+  color:#8a8a8a;
+}
+.form-item[type='text']:before,
+.form-item[type='password']:before,
+[contenteditable]:before,
+select:before,
+textarea:before {
+  content:none;
+}
+.form-item {
+  display: inline-block;
+  margin: 10px 15px;
+  margin-left:0;
+}
+
+.form-item .for-label {
+  font-weight: 500;
+  margin-right: 2px;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+  display: inline-block;
+  width: 160px;
+  padding: 4px 11px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  vertical-align: middle;
+  .border-radius
+}
+
+textarea {
+  vertical-align: top;
+  width: 400px;
+  height: 100px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: @borderFocusColor !important;
+  outline: none;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px @boxShadawFocusColor;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px @boxShadawFocusColor;
+}
+
+input[type=checkbox]:focus + label:before,
+input[type=checkbox].chkbox2:focus + label,
+input[type=radio].radio2:focus + label {
+  border-color: @borderFocusColor !important;
+  outline: none;
+  -webkit-box-shadow: inset 0 1px 1px @boxShadawFocusColor, 0 0 3px @boxShadawFocusColor;
+  box-shadow: inset 0 1px 1px @boxShadawFocusColor, 0 0 3px @boxShadawFocusColor;
+}
+
+input[type=radio]:focus + label:before {
+  outline: none;
+  -webkit-box-shadow: inset 0 1px 1px @boxShadawFocusColor, 0 0 4px @boxShadawFocusColor;
+  box-shadow: inset 0 1px 1px @boxShadawFocusColor, 0 0 4px @boxShadawFocusColor;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 18px;
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  .anticon{
+    margin-right:6px;
+  }
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #F90709;
+  border-color: #F90709;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active, .open > .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #f1393a;
+  border-color: #f1393a;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: @primaryColor;
+  border-color: @primaryColor;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: @primaryColorHover;
+  border-color: @primaryColorHover;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #04bfea;
+  border-color: #04bfea;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #11caf5;
+  border-color: #11caf5;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning.focus, .btn-warning:active, .btn-warning.active, .open > .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
+/*自定义checkbox样式类型一*/
+input[type=checkbox].chkbox1 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+input[type=checkbox].chkbox1 + label {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+}
+
+input[type=checkbox].chkbox1 + label:before {
+  content: "";
+  /*position:absolute;*/
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #a9a9a9;
+  background: #a9a9a9;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+
+input[type=checkbox].chkbox1:checked + label:before {
+  /*width:14px;
+  height:14px;
+  border:1px solid #dcdcdc;*/
+  border: 1px solid @primaryColor;
+  background: @primaryColor;
+  background-image: url(../images/gou-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 92%;
+}
+
+/*添加disabled时的属性*/
+input[type='checkbox'][disabled].chkbox1 + label:before {
+  background: #dadada;
+}
+
+/*radio自定义默认选框类型*/
+input[type='radio'] {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+input[type='radio'] + label {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+}
+
+input[type='radio'] + label:before {
+  content: "";
+  /*position:absolute;*/
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #a9a9a9;
+  border-radius: 20px;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+
+input[type='radio']:checked + label:before {
+  width: 10px;
+  height: 10px;
+  background: @primaryColor;
+  border: 2px solid #bfbfbf;
+}
+
+input[type='radio'][disabled] + label:before {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #bbb5b5;
+  background: #dadada;
+}
+
+/*radio自定义选框类型1&&checkbox自定义选框类型1*/
+input[type='radio'].radio2, input[type=checkbox].chkbox2 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+input[type='radio'].radio2 + label, input[type=checkbox].chkbox2 + label {
+  text-indent: -4px;
+  display: inline-block;
+  position: relative;
+  background: #a9a9a9;
+  line-height: 24px;
+  padding: 2px 12px;
+  vertical-align: middle;
+  color: #fff;
+  margin-right: 6px;
+  .border-radius
+}
+
+input[type='radio'].radio2:checked + label, input[type=checkbox].chkbox2:checked + label {
+  background: @primaryColor;
+}
+
+input[type='radio'].radio2 + label:before, input[type=checkbox].chkbox2 + label:before {
+  width: 0;
+  height: 0;
+  border: none;
+}
+
+input[type='radio'][disabled].radio2 + label, input[type=checkbox][disabled].chkbox2 + label {
+  background: #c7c7c7;
+}
+
+/*checkbox自定义选框类型*/
+input[type='checkbox'] {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+input[type='checkbox'] + label {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+}
+
+input[type='checkbox'] + label:before {
+  content: "";
+  /*position:absolute;*/
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+
+input[type='checkbox']:checked + label:before {
+  /*background:#04bfea;*/
+  background-image: url(../images/gou-theme.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 94%;
+}
+
+/*添加disabled时的属性*/
+input[type='checkbox'][disabled] + label:before {
+  background: #dadada;
+}
+
+input[type='radio'].radioxx{
+  margin-right:10px;
+  opacity:1;
+}
+
+input[type='radio'].radioxx:checked{
+  border-color:red;
+}
+input[type='radio'].radioxx + span:before{
+  content:"选择";
+}
+input[type='radio'].radioxx:checked + span:before{
+  color:red;
+}

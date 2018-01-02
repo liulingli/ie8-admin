@@ -1,6 +1,10 @@
 $(function(){
     createMenu(); //初始化菜单
     //监听hashChange事件
+
+    onHashChange();//刷新页面
+
+    $(window).off("hashchange");
     $(window).on("hashchange",function(){
         onHashChange();
     });
@@ -20,7 +24,7 @@ $(function(){
                 },
                 success : function(response){
                     $("#main-content").html(response);
-                    //eval(method+"()");
+                    eval(method+"()");
                     hideLoading()
                 },
                 error : function(error){
@@ -32,8 +36,13 @@ $(function(){
             });
         }
     }
-
+    $("body").off("click","#unfoldControl");
     $("body").on("click","#unfoldControl",function(){
          $("#app").toggleClass("collapse");
     })
-})
+
+    $(window).off("resize");
+    $(window).on("resize",function(){
+        getFormWidth();
+    })
+});

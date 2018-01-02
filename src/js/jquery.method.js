@@ -302,3 +302,23 @@ function cursorMoveToEnd(obj) {
         range.select();
     }
 }
+
+
+//校验表单查询条件的宽度
+function getFormWidth(){
+    //初始化基准宽度
+    console.log("getFormWidth")
+    var referWidth = $(".form-item input[type='text']").eq(0).parent().outerWidth();
+    var queryArray = $(".form-item");
+    queryArray.each(function(){
+        var width = $(this).outerWidth()-1;
+        var remainder = width % referWidth;
+        var Multiple = 1;
+        if(remainder<25){
+            Multiple = Math.floor(width/referWidth);
+        }else{
+            Multiple = Math.ceil(width/referWidth);
+        }
+        $(this).css("width",((referWidth+1)*Multiple)+"px");
+    })
+}

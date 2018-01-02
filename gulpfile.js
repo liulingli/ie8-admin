@@ -152,7 +152,7 @@ gulp.task('less-dev', function () {
 
 //自动监听html文件变化
 gulp.task('watchHtml',function(){
-    return gulp.watch(['index.html','login.html','src/!**!/!*.html','dev/!**!/!*.html'],['html']) // 监听根目录下所有.html文件
+    return gulp.watch(['index.html','login.html','src/**/*.html','dev/**/*.html'],['html']) // 监听根目录下所有.html文件
 });
 
 //自动监听less文件的变化
