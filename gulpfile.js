@@ -60,10 +60,18 @@ gulp.task('clean:dev', function (cb) {
         .pipe(clean());
 });
 
+//打包html
 gulp.task('html',function(){
-    return gulp.src(['index.html','login.html','src/**/*.*'])
+    return gulp.src(['index.html','login.html','src/!font/*.html'])
         .pipe(gulp.dest(isDev?app.devPath:app.distPath))
 })
+
+//打包font
+gulp.task('font',function(){
+    return gulp.src('src/font/*.*')
+        .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'font'))
+})
+
 
 //合并js文件并压缩并加上md5
 gulp.task('uglifyjs',function(){
@@ -166,7 +174,7 @@ gulp.task('watchJs',function(){
 })
 
 //开发环境启动
-gulp.task('development',sequence('clean:dev','uglifyjs-dev','less-dev','compress-img','copy-third-party','html','copy-html','config','watchHtml','watchLess','watchJs','webserver'));
+gulp.task('development',sequence('clean:dev','uglifyjs-dev','less-dev','compress-img','copy-third-party','html','copy-html','font','config','watchHtml','watchLess','watchJs','webserver'));
 
 //生产环境打包
-gulp.task('dist',sequence('clean:dist','uglifyjs','less','rev','compress-img','copy-third-party','html','copy-html','config'))
+gulp.task('dist',sequence('clean:dist','uglifyjs','less','rev','compress-img','copy-third-party','html','copy-html','font','config'))
