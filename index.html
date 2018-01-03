@@ -1,13 +1,11 @@
-
-<!--[if (gte IE 6)&(lte IE 8)]>
 <!DOCTYPE html>
-<![endif]-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>兼容ie8的后台管理系统项目构建</title>
-    <!--[if (gte IE 6)&(lte IE 8)]>
-    <script type="text/javascript" src="lib/selectivizr.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/selectivizr.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="css/build.css">
     <link rel="stylesheet" href="font/iconfont.css">
@@ -28,10 +26,10 @@
              </div>
              <div class="main-layout">
                  <div class="main-layout-header">
-                     <i class="anticon anticon-menu-unfold" id="unfoldControl"></i>
+                     <i class="iconfont iconfont-menu-unfold" id="unfoldControl"></i>
                      <div class="main-layout-header-right">
                          <span class="ant-badge">
-                             <i class="anticon anticon-notice">&#xe71f;</i>
+                             <i class="iconfont iconfont-notice">&#xe71f;</i>
                              <label class="sub ant-badge-number">21</label>
                          </span>
                          <span class="ant-acount ant-dropdown-trigger">
@@ -40,10 +38,10 @@
                              </span>
                               小六子不伶俐
                              <ul class="sub-dropdowm-menu">
-                                 <li class="sub-dropdowm-menu-item"><i class="anticon"></i>个人中心</li>
-                                 <li class="sub-dropdowm-menu-item"><i class="anticon"></i>设置</li>
+                                 <li class="sub-dropdowm-menu-item"><i class="iconfont"></i>个人中心</li>
+                                 <li class="sub-dropdowm-menu-item"><i class="iconfont"></i>设置</li>
                                  <li class="sub-dropdowm-menu-divider"></li>
-                                 <li class="sub-dropdowm-menu-item"><i class="anticon"></i>退出登录</li>
+                                 <li class="sub-dropdowm-menu-item"><i class="iconfont"></i>退出登录</li>
                              </ul>
                          </span>
                      </div>
@@ -71,7 +69,6 @@
      <div class="ant-popover-content">
 
      </div>
-     <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
      <script type="text/javascript" src="lib/storage.js"></script>
      <script type="text/javascript" src="lib/json2.js"></script>
      <script type="text/javascript" src="lib/json_parse.js"></script>

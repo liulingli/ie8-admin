@@ -8,7 +8,7 @@ function createMenu(){
       if(MENU[i].children){
           var children = MENU[i].children;
           menuHtml += "<li class='menu-sub'>"
-                   +  "<div class='menu-sub-title'><span><i class='anticon'>"+MENU[i].icon+"</i><span class='text'>"+MENU[i].text+"</span></span><i class='anticon anticon-arrow'></i></div>"
+                   +  "<div class='menu-sub-title'><span><i class='iconfont'>"+MENU[i].icon+"</i><span class='text'>"+MENU[i].text+"</span></span><i class='anticon anticon-arrow'></i></div>"
                    +  "<ul class='menu-sub-content'>"
           for(var j=0;j<children.length;j++){
               menuHtml += "<li data-url='" +children[j].url +"' data-method='"+children[j].method+ "'>"
@@ -18,7 +18,7 @@ function createMenu(){
           menuHtml += "</ul>";
       }else{
           menuHtml += "<li data-url='" +MENU[i].url +"' data-method='"+MENU[i].method+ "'>"
-                   +  "<i class='anticon'>" + MENU[i].icon + "</i>"
+                   +  "<i class='iconfont'>" + MENU[i].icon + "</i>"
                    +  "<span class='text'>" + MENU[i].text + "</span>"
                    +  "</li>"
       }

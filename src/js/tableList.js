@@ -7,4 +7,5 @@ function tableList(){
     getFormWidth();
     $("input,textarea").placeholder();
     console.log("tableList初始化")
+    selectivizr(this); //兼容ie8
 }

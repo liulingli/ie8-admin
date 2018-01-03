@@ -35,6 +35,7 @@ input[type="text"], input[type="password"], select, textarea {
   display: inline-block;
   width: 160px;
   padding: 4px 11px;
+  font-family:"microsoft yahei";
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
@@ -52,6 +53,7 @@ textarea {
   vertical-align: top;
   width: 400px;
   height: 100px;
+  font-family:"microsoft yahei";
 }
 
 input:focus, select:focus, textarea:focus {
@@ -60,7 +62,10 @@ input:focus, select:focus, textarea:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px @boxShadawFocusColor;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px @boxShadawFocusColor;
 }
-
+input[type=checkbox],input[type=radio]{
+  opacity: 0;
+  filter:alpha(opacity=0);
+}
 input[type=checkbox]:focus + label:before,
 input[type=checkbox].chkbox2:focus + label,
 input[type=radio].radio2:focus + label {
@@ -96,7 +101,8 @@ input[type=radio]:focus + label:before {
   border: 1px solid transparent;
   border-radius: 4px;
   outline: none;
-  .anticon{
+  font-family:"microsoft yahei";
+  .iconfont{
     margin-right:6px;
   }
 }
@@ -175,7 +181,6 @@ input[type=radio]:focus + label:before {
 
 /*自定义checkbox样式类型一*/
 input[type=checkbox].chkbox1 {
-  opacity: 0;
   margin-right: -13px;
 }
 
@@ -202,15 +207,12 @@ input[type=checkbox].chkbox1 + label:before {
 }
 
 input[type=checkbox].chkbox1:checked + label:before {
-  /*width:14px;
-  height:14px;
-  border:1px solid #dcdcdc;*/
-  border: 1px solid @primaryColor;
-  background: @primaryColor;
-  background-image: url(../images/gou-white.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 92%;
+  content:"\e741";
+  font-size:12px;
+  font-family: "iconfont";
+  color:#ffffff;
+  background:@primaryColor;
+  border-color:@primaryColor ;
 }
 
 /*添加disabled时的属性*/
@@ -281,6 +283,9 @@ input[type='radio'].radio2 + label, input[type=checkbox].chkbox2 + label {
 input[type='radio'].radio2:checked + label, input[type=checkbox].chkbox2:checked + label {
   background: @primaryColor;
 }
+input[type='radio'].radio2:checked + label:before, input[type=checkbox].chkbox2:checked + label:before {
+  content:"";
+}
 
 input[type='radio'].radio2 + label:before, input[type=checkbox].chkbox2 + label:before {
   width: 0;
@@ -321,29 +326,14 @@ input[type='checkbox'] + label:before {
 }
 
 input[type='checkbox']:checked + label:before {
-  /*background:#04bfea;*/
-  background-image: url(../images/gou-theme.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 94%;
+  content:"\e741";
+  font-size:12px;
+  font-family: "iconfont";
+  color:@primaryColor;
+  border-color:@primaryColor;
 }
 
 /*添加disabled时的属性*/
 input[type='checkbox'][disabled] + label:before {
   background: #dadada;
-}
-
-input[type='radio'].radioxx{
-  margin-right:10px;
-  opacity:1;
-}
-
-input[type='radio'].radioxx:checked{
-  border-color:red;
-}
-input[type='radio'].radioxx + span:before{
-  content:"选择";
-}
-input[type='radio'].radioxx:checked + span:before{
-  color:red;
 }
