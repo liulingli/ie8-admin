@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../lib/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/build.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-header-logo">
+                    <img src="../images/logo.svg">
+                    <span>后台管理系统</span>
+                </div>
+                <div class="login-header-detail">
+                    <p>兼容ie8的后台项目搭建框架,样式参考ant-design</p>
+                </div>
+            </div>
+            <div class="login-main">
+                <div class="login-form">
+                    <div class="antd-tabs" tab="2">
+                        <div class="ant-tabs-bar">
+                            <div class="ant-tabs-nav-container">
+                                <div class="ant-tabs-tab ant-tabs-tab-active" type="1">账户密码登录</div>
+                                <div class="ant-tabs-tab" type="2">手机号登录</div>
+                            </div>
+                        </div>
+                        <div class="antd-tabs-content">
+                            <div class="antd-tabs-tabpanel antd-tabs-tabpanel-active">
+                                <div class="form-item">
+                                    <label class="for-label"><i class="iconfont icon-yonghu"></i></label>
+                                    <input type="text" class="form-control" placeholder="admin">
+                                </div>
+                                <div class="form-item">
+                                    <label class="for-label"><i class="iconfont icon-suo"></i></label>
+                                    <input type="password" class="form-control" placeholder="admin">
+                                </div>
+                            </div>
+                            <div class="antd-tabs-tabpanel">
+                                <div class="form-item">
+                                    <label class="for-label"><i class="iconfont icon-shoujihao"></i></label>
+                                    <input type="text" class="form-control" placeholder="admin">
+                                </div>
+                                <div class="form-item">
+                                    <label class="for-label"><i class="iconfont icon-yanzhengma"></i></label>
+                                    <input type="text" class="form-control" placeholder="验证码" style="width:180px">
+                                    <button class="btn btn-default" id="getCode">获取验证码</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-button">
+                        <div class="choose">
+                            <span class="left">
+                                <input type="checkbox" class="chkbox1" name="checkAll" id="autoLogin"/><label for="autoLogin">自动登录</label>
+                            </span>
+                            <span class="right">
+                                <a href="./forgetPassword.html" class="forget">忘记密码</a>
+                            </span>
+                        </div>
+                        <button class="btn btn-primary" id="loginButton">登录</button>
+                    </div>
+                </div>
+                <div class="other-login"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../lib/storage.js"></script>
+    <script type="text/javascript" src="../lib/json2.js"></script>
+    <script type="text/javascript" src="../lib/json_parse.js"></script>
+    <script type="text/javascript" src="../lib/jquery.hashchange.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery.placeholder.min.js"></script>
+    <script type="text/javascript" src="../js/config.js"></script>
+    <script type="text/javascript" src="./login.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+@import 'theme.less';
+
+.container{
+  width:100%;
+  height:100%;
+  overflow-y:auto;
+  .login-container{
+      width: 100%;
+      min-height:100%;
+      padding: 90px 0 100px 0;
+      background:#f0f2f5;
+      background-image:url('../images/background.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position:center;
+  }
+  .login-header-logo{
+    width:100%;
+    text-align: center;
+    img{
+      width:48px;
+      margin-right:14px;
+      vertical-align: middle;
+    }
+    span{
+      font-size:24px;
+      font-weight:600;
+      vertical-align: middle;
+    }
+  }
+  .login-header-detail{
+    font-size:12px;
+    text-align: center;
+    color:@subColor;
+    margin-top:20px;
+  }
+  .login-main{
+    width:370px;
+    margin: 50px auto;
+    .form-item{
+      width:100%;
+      margin:10px 0;
+      position:relative;
+    }
+    .for-label{
+      position:absolute;
+      left:10px;
+      top:9px;
+      color:@subColor;
+    }
+    .for-label+input{
+      width:100%;
+      padding-left:40px;
+    }
+    #getCode{
+      width:140px;
+      margin-left:12px;
+    }
+  }
+  .login-button{
+    margin: 10px 16px;
+  }
+  .choose{
+    margin: 10px 0;
+    .left{
+      float:left;
+    }
+    .right{
+      float:right;
+    }
+  }
+  #loginButton{
+    width:100%;
+    margin: 15px 0;
+  }
+}

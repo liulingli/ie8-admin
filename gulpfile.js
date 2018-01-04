@@ -62,7 +62,7 @@ gulp.task('clean:dev', function (cb) {
 
 //打包html
 gulp.task('html',function(){
-    return gulp.src(['index.html','login.html','src/!font/*.html'])
+    return gulp.src(['index.html','src/!font/*.html'])
         .pipe(gulp.dest(isDev?app.devPath:app.distPath))
 })
 
@@ -133,6 +133,12 @@ gulp.task('copy-html',function () {
         .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'componentHtml'));
 });
 
+//复制登录页面组件
+gulp.task('copy-user',function () {
+    return gulp.src('src/user/**/*.*')
+        .pipe(gulp.dest((isDev?app.devPath:app.distPath)+'user'));
+});
+
 //读取 rev-manifest.json 文件以及需要进行替换的文件
 gulp.task('rev', function() {
     return gulp.src(['rev/**/*.json', 'index.html'])
@@ -160,7 +166,7 @@ gulp.task('less-dev', function () {
 
 //自动监听html文件变化
 gulp.task('watchHtml',function(){
-    return gulp.watch(['index.html','login.html','src/**/*.html','dev/**/*.html'],['html']) // 监听根目录下所有.html文件
+    return gulp.watch(['index.html','dev/**/*.html'],['html']) // 监听根目录下所有.html文件
 });
 
 //自动监听less文件的变化
@@ -170,11 +176,11 @@ gulp.task('watchLess',function(){
 
 //自动监听js文件的变化
 gulp.task('watchJs',function(){
-    return gulp.watch(['config.js','src/js/**/*.js'],['uglifyjs-dev']);
+    return gulp.watch(['config.js','src/js/**/*.js','user/*.js'],['uglifyjs-dev']);
 })
 
 //开发环境启动
-gulp.task('development',sequence('clean:dev','uglifyjs-dev','less-dev','compress-img','copy-third-party','html','copy-html','font','config','watchHtml','watchLess','watchJs','webserver'));
+gulp.task('development',sequence('clean:dev','uglifyjs-dev','less-dev','compress-img','copy-third-party','copy-user','html','copy-html','font','config','watchHtml','watchLess','watchJs','webserver'));
 
 //生产环境打包
-gulp.task('dist',sequence('clean:dist','uglifyjs','less','rev','compress-img','copy-third-party','html','copy-html','font','config'))
+gulp.task('dist',sequence('clean:dist','uglifyjs','less','rev','compress-img','copy-third-party','copy-user','html','copy-html','font','config'))
