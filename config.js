@@ -10,6 +10,20 @@ var config = {
         text: "主页",
         method:"dashboard"
     },{
+        text:"表单页",
+        icon: "&#xe608;",
+        children:[
+            {
+                url:  "componentHtml/baseForm.html",
+                text: "基础表单页",
+                method:"baseForm"
+            }, {
+                url:  "componentHtml/stepForm.html",
+                text: "分布表单页",
+                method:"stepForm"
+            }
+        ]
+    },{
         text:'详情页',
         icon: "&#xe606;",
         children: [
